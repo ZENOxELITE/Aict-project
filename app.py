@@ -1,12 +1,16 @@
 from flask import Flask, request, jsonify, send_from_directory
 from flask_cors import CORS
 from groq import Groq
+from dotenv import load_dotenv
+import os
 
 app = Flask(__name__, static_folder=".")
 CORS(app)
 
-client = Groq(api_key="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")
-
+load_dotenv()
+api_key = os.getenv("GROK_API_KEY")
+# client = Groq(api_key="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")
+client = Groq(api_key=api_key)
 conversation_history = []
 
 VALID_MODELS = [
