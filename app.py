@@ -9,7 +9,6 @@ CORS(app)
 
 load_dotenv()
 api_key = os.getenv("GROK_API_KEY")
-# client = Groq(api_key="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")
 client = Groq(api_key=api_key)
 conversation_history = []
 
